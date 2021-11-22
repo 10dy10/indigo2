@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>레이아웃 기준문서1</title>
+</head>
+<body>
+    <h1>뉴스</h1>
+    <h2>국내뉴스</h2>
+    <ul id="news-box">
+        
+    </ul>
+
+    <script>
+        $(function(){
+            function newsCall(tmp){
+                $('#news-box').load('news.html #news0' + tmp);
+            }
+
+            let newsNum;
+            newsNum = Math.ceil(Math.random()*10)%4+1;
+            newsCall(newsNum);
+            
+            newsCall();
+            setInterval(newsCall,1000)
+        })
+    </script>
+</body>
+</html>

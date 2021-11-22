@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-title" content="INDIGO">
+    <meta name="robots" content="indigo,sport,인디고,스포츠,레포츠">
+    <meta name="description" content="인디고에서 새로운 레포츠를 즐겨보세요">
+    <meta property="og:title" content="인디고">
+    <meta property="og:url" content="https://10dy10.github.io/indigo/">
+    <meta property="og:image" content="./images/og-image.jpg">
+    <meta property="og:description" content="인디고에서 새로운 레포츠를 즐겨보세요">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="indigo">
+    <meta name="twitter:url" content="https://10dy10.github.io/indigo/">
+    <meta name="twitter:image" content="./images/og-image.jpg">
+    <meta name="twitter:description" content="인디고에서 새로운 레포츠를 즐겨보세요">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/reset.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- 공통스타일 -->
+    <link rel="stylesheet" href="./css/default.min.css">
+    <!-- 반응형 헤더스타일 -->
+    <link rel="stylesheet" href="./css/header.min.css">
+    <!-- 반응형 섹션 스타일 -->
+    <link rel="stylesheet" href="./css/index.min.css">
+    <!-- 반응형 푸터 스타일 -->
+    <link rel="stylesheet" href="./css/footer.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- 슬라이더 -->
+    <script src="./js/slider.js"></script>
+    <!-- 네비게이션 -->
+    <script src="./js/call-nav.js"></script>
+    <title>INDIGO</title>
+</head>
+<body>
+    <section class="wrap">
+        <header class="header">
+            <div class="container">
+                <h1 class="main-title">
+                    <strong>
+                    <a href="#" onclick="indexAjax();">INDIGO</a>
+                    </strong>
+                </h1>
+                <div class="btn-nav" id="call-nav">
+                    <span>라인</span>
+                    <span>라인</span>
+                    <span>라인</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#" onclick="indexAjax();">HOME</a></li>
+                        <li><a href="#" onclick="weAreAjax();">WE ARE</a></li>
+                        <li><a href="#" onclick="workAjax();">WORK</a></li>
+                        <li><a href="#" onclick="blogAjax();">BLOG</a></li>
+                        <li><a href="#" onclick="contactAjax();">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="main"></main>
+        <footer class="footer">
+            <div class="container">
+                <address>
+                    <p class="sec-txt">인천광역시 서구 심곡동 서곶로 284, 4~5층</p>
+                </address>
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        $(function(){
+
+            indexAjax();
+
+            function indexAjax(){
+                $('#main').load('data.html #index');
+            }
+
+            function weAreAjax(){
+                $('#main').load('data.html #we-are');
+            }
+
+            function workAjax(){
+                $('#main').load('data.html #work');
+            }
+
+            function blogAjax(){
+                $('#main').load('data.html #blog');
+            }
+
+            function contactAjax(){
+                $('#main').load('data.html #contact');
+            }
+
+            $('h1 a').on({'click':indexAjax});
+            $('nav li:nth-child(1) a').on({'click':indexAjax});
+            $('nav li:nth-child(2) a').on({'click':weAreAjax});
+            $('nav li:nth-child(3) a').on({'click':workAjax});
+            $('nav li:nth-child(4) a').on({'click':blogAjax});
+            $('nav li:nth-child(5) a').on({'click':contactAjax});
+        })
+    </script>
+        <!-- // work hover
+            // $('.work .sec-contents').on({
+            //     'mouseenter':function(){
+            //         $(this).children('.background').css({
+            //             transition:'0.3s',
+            //             backgroundColor:'rgba(63, 81, 181, 0.6)',
+            //         });
+            //         $(this).children('.sec-text').css({
+            //             transition:'0.3s',
+            //             transform:'translateY(0)'
+            //         });
+            //     },
+            //     'mouseleave':function(){
+            //         $(this).children('.background').css({
+            //             transition:'0.3s',
+            //             backgroundColor:'rgba(63, 81, 181, 0)',
+            //         });
+            //         $(this).children('.sec-text').css({
+            //             transition:'0.3s',
+            //             transform:'translateY(-100%)'
+            //         });
+            //     },
+            // }); -->
+    </body>
+</html>
